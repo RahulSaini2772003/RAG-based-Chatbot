@@ -1,5 +1,7 @@
 from transformers import pipeline
 from nltk.tokenize import sent_tokenize
+import nltk
+
 nltk.download('punkt')
 qa_model = pipeline("text2text-generation", model="google/flan-t5-large") 
 

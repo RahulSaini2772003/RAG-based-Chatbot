@@ -1,6 +1,6 @@
 from transformers import pipeline
 from nltk.tokenize import sent_tokenize
-
+nltk.download('punkt')
 qa_model = pipeline("text2text-generation", model="google/flan-t5-large") 
 
 def preprocess_context(context_chunks):

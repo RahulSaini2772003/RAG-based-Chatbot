@@ -25,6 +25,13 @@ transformers
 torch
 ```
 
+## How to Run
+
+```bash
+streamlit run app.py
+```
+
+
 ## File Structure
 
 ```
@@ -38,6 +45,3 @@ torch
 └── README.md
 ```
 
-## License
-
-MIT License

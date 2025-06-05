@@ -5,10 +5,14 @@ import nltk
 nltk.download('punkt')
 qa_model = pipeline("text2text-generation", model="google/flan-t5-large") 
 
+def simple_sent_tokenize(text):
+    return [s.strip() for s in text.split('.') if s.strip()]
+
 def preprocess_context(context_chunks):
     context = " ".join(context_chunks)
-    sentences = sent_tokenize(context)
-    return " ".join(sentences[:20]) 
+    sentences = simple_sent_tokenize(context)
+    return " ".join(sentences[:20])
+
 
 def generate_answer(context_chunks, question):
     context = preprocess_context(context_chunks)
